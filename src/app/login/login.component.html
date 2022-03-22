@@ -1,0 +1,73 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<section id="wrapper" class="login-register login-sidebar animate__animated animate__fadeIn" style="background-image:url(assets/images/background/login-register.jpg);">
+    <div class="row">
+        <div class="col-md-4 card overflow-auto">
+            <div class="card-body">
+                <div class="text-center mb-3">
+                    <a href="javascript:void(0)">
+                        <img src="assets/images/isologo-azul-upds.png" width="120px" alt="Logo UPDS" />
+                    </a>
+                </div>
+                <p class="text-center mat-h1 mb-3">Linea Grafica UPDS</p>
+                <p class="text-center mat-h2 mb-3">Inicio de Sesion</p>
+                <form class="form" [formGroup]="form" (ngSubmit)="save()">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Correo electronico</mat-label>
+                        <input type="text" matInput placeholder="Ej. j***@upds.net.bo" formControlName="email" name="email">
+                    </mat-form-field>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput type="password" placeholder="Ej. 10*****8" formControlName="pass" name="pass">
+                    </mat-form-field>
+                    <mat-checkbox>Recuerdame!</mat-checkbox>
+                    <div class="text-center row mt-3">
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <button class="full-width" mat-raised-button color="primary">Iniciar sesión</button>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                    
+                    <div class="form-group m-b-0 mt-1">
+                        <div class="col-sm-12 text-center">
+                            ¿No tienes una cuenta? <a href="#" [routerLink]="['/register']" class="text-primary m-l-5"><b>Regístrate</b></a>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
+                            <button mat-raised-button color="accent">Office 365</button>
+                        </div>
+                    </div>
+                </form>
+                <form class="form-horizontal" id="recoverform" action="index.html">
+                    <div class="form-group ">
+                        <div class="col-xs-12">
+                            <h3>Recuperar contraseña</h3>
+                            <p class="text-muted">¡Ingrese su correo electrónico y le enviaremos las instrucciones! </p>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <div class="col-xs-12">
+                            <input class="form-control" type="text" required="" placeholder="Correo">
+                        </div>
+                    </div>
+                    <div class="form-group text-center m-t-20">
+                        <div class="col-xs-12">
+                            <button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-8"></div>
+    </div>
+    <!-- <div class="login-box card">
+        
+    </div> -->
+</section>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->

@@ -1,1 +1,52 @@
-<p>contact works!</p>
+<div>
+    <h3>Formulario de ejemplo</h3>
+
+    <form class="form" [formGroup]="form" (ngSubmit)="save()">
+        <div class="row">
+            <div class="col-12">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Nombre completo</mat-label>
+                    <input type="text" matInput placeholder="Ej. Joaquin G..." formControlName="nombre" name="nombre">
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Correo electronico</mat-label>
+                    <input type="text" matInput placeholder="Ej. j***@upds.net.bo" formControlName="email" name="email">
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput type="password" placeholder="Ej. 10*****8" formControlName="pass" name="pass">
+                </mat-form-field>
+            </div>
+            <div class="col-4">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Documento Ident.</mat-label>
+                    <input type="text" matInput placeholder="Ej. 10..." formControlName="doc" name="doc">
+                </mat-form-field>
+            </div>
+            <div class="col-4">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Sede</mat-label>
+                    <mat-select formControlName="idSede">
+                        <mat-option *ngFor="let sede of lSede" [value]="sede.Id"> {{ sede.Nombre }} </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-4">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Pais</mat-label>
+                    <mat-select formControlName="idPais">
+                        <mat-option *ngFor="let pais of lPais" [value]="pais.Id"> {{ pais.Nombre }} </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="ol-xs-12 col-sm-12 col-md-12 m-t-10 text-cente">
+            <button class="full-width py-2" mat-raised-button color="primary">Guardar</button>
+        </div>
+    </form>
+
+</div>

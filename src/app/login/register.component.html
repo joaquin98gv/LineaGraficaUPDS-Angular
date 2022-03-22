@@ -1,0 +1,102 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<section id="wrapper" class="login-register login-sidebar animate__animated animate__fadeIn" style="background-image:url(assets/images/background/login-register.jpg);">
+    <div class="row">
+        <div class="col-md-4 card overflow-auto">
+            <div class="card-body">
+                <div class="text-center mb-3">
+                    <a href="javascript:void(0)">
+                        <img src="assets/images/isologo-azul-upds.png" width="120px" alt="Logo UPDS" />
+                    </a>
+                </div>
+                <p class="text-center mat-h1 mb-3">Cursos y capacitaciones UPDS</p>
+                <p class="text-center mat-h2 mb-3">Registro</p>
+
+                <div *ngIf="EsUpds == null" class="animated flip mb-3">
+                    <mat-card>
+                        <p class="text-center mat-h3 mb-3">Eres estudiante de la UPDS?</p>
+                        <button mat-raised-button color="primary" class="full-width mb-1" (click)="EsUpds = true">Si</button>
+                        <button mat-raised-button color="primary" class="full-width" (click)="EsUpds = false">No</button>
+                    </mat-card>
+                </div>
+                <!-- <div *ngIf="EsUpds != null">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">west</mat-icon>
+                </div> -->
+                <!-- Si no es estudiante UPDS -->
+                <div *ngIf="EsUpds == false" class="animate__animated animate__fadeIn">
+                    <form class="form" [formGroup]="formE" (ngSubmit)="saveE()">
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Nombre completo</mat-label>
+                            <input type="text" matInput placeholder="Ej. Jo****n G****" formControlName="NombreCompleto">
+                        </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Documento de identidad</mat-label>
+                            <input matInput type="text" placeholder="Ej. 10*****8" formControlName="Documento">
+                        </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Correo electronico</mat-label>
+                            <input type="text" matInput placeholder="Ej. Jo*******@****" formControlName="Email">
+                        </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Telefono personal</mat-label>
+                            <input type="tel" matInput placeholder="Ej. 61*****8" formControlName="Telefono">
+                        </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Sede</mat-label>
+                            <mat-select formControlName="IdSede" (selectionChange)="onChange( $event )">
+                                <mat-option *ngFor="let sede of lSedes" [value]="sede.Id"> {{ sede.Nombre }} </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Carrera de preferencia</mat-label>
+                            <mat-select formControlName="SiglaCarrera">
+                                <mat-option *ngFor="let carrera of lCarreras" [value]="carrera.Codigo"> {{ carrera.Nombre }} </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-checkbox formControlName="EsProfesional">Soy Profesional</mat-checkbox><br>
+                        <mat-checkbox formControlName="QuiereInformacion">Quiero mas informacion</mat-checkbox>
+                        <div class="text-center row mt-3">
+                            <div class="col-2"></div>
+                            <div class="col-8">
+                                <button class="full-width" mat-raised-button color="primary">Registrarme</button>
+                            </div>
+                            <div class="col-2"></div>
+                        </div>
+                    </form>
+                    <!-- <pre>
+                        {{ formE.value | json }}
+                    </pre> -->
+                </div>
+                <!-- Si es estudiante UPDS -->
+                <div *ngIf="EsUpds" class="animate__animated animate__fadeIn">
+                    <form class="form" [formGroup]="formI" (ngSubmit)="saveI()">
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Documento de identidad</mat-label>
+                            <input matInput type="text" placeholder="Ej. 10*****8" formControlName="Documento">
+                        </mat-form-field>
+                        <div class="text-center row mt-3">
+                            <div class="col-2"></div>
+                            <div class="col-8">
+                                <button class="full-width" mat-raised-button color="primary">Registrarme</button>
+                            </div>
+                            <div class="col-2"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="form-group m-b-0">
+                    <div class="col-sm-12 text-center">
+                        ¿Ya tienes una cuenta? <a href="#" [routerLink]="['/login']" class="text-primary m-l-5"><b>Inicio sesión</b></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8"></div>
+    </div>
+    <!-- <div class="login-box card">
+        
+    </div> -->
+</section>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->

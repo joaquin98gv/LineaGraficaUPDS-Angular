@@ -7,12 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  toggle = false;
-  userName = "Joaquin.Gonzalez";
   constructor() { }
-
-  changeToggle(){
-    this.toggle = !this.toggle;
-  }
 
 }
