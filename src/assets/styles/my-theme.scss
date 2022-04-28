@@ -1,0 +1,74 @@
+$primary-palette: (
+ 50: rgb(0, 70, 134),
+ 100: rgb(0, 70, 134),
+ 200: rgb(0, 70, 134),
+ 300: rgb(0, 70, 134),
+ 400: rgb(0, 70, 134),
+ 500: rgb(0, 70, 134),
+ 600: rgb(0, 70, 134),
+ 700: rgb(0, 70, 134),
+ 800: rgb(0, 70, 134),
+ 900: rgb(0, 70, 134),
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: rgba(black, 0.87),
+   400: rgba(black, 0.87),
+   500: #f5f5f5,
+   600: rgba(black, 0.87),
+   700: rgba(black, 0.87),
+   800: rgba(black, 0.87),
+   900: rgba(black, 0.87),
+ )
+);
+
+$accent-palette: (
+ 50: #009bdb,
+ 100: #009bdb,
+ 200: #009bdb,
+ 300: #009bdb,
+ 400: #009bdb,
+ 500: #009bdb,
+ 600: #009bdb,
+ 700: #009bdb,
+ 800: #009bdb,
+ 900: #009bdb,
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: rgba(black, 0.87),
+   400: rgba(black, 0.87),
+   500: #f5f5f5,
+   600: rgba(black, 0.87),
+   700: rgba(black, 0.87),
+   800: rgba(black, 0.87),
+   900: rgba(black, 0.87),
+ )
+);
+
+$warn-palette: (
+ 50: #f33b00,
+ 100: #f33b00,
+ 200: #f33b00,
+ 300: #f33b00,
+ 400: #f33b00,
+ 500: #f33b00,
+ 600: #f33b00,
+ 700: #f33b00,
+ 800: #f33b00,
+ 900: #f33b00,
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: rgba(black, 0.87),
+   400: rgba(black, 0.87),
+   500: #f5f5f5,
+   600: rgba(black, 0.87),
+   700: rgba(black, 0.87),
+   800: rgba(black, 0.87),
+   900: rgba(black, 0.87),
+ )
+);

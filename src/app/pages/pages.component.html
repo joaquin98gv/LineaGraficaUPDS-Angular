@@ -50,22 +50,17 @@
                 </a>
             </li>
         </ul>
-  
-        <ul class="list-unstyled CTAs">
-            <li>
-                <a href="#" class="btn">Documentacion</a>
-            </li>
-        </ul>
-        <a href="#" class="btn btn-danger logout">
-            BTN Example
-            <i class="fas fa-sign-out"></i>
-        </a>
+        <div class="m-2">
+            <button class="full-width py-2" mat-raised-button color="warn">
+                Documentacion
+            </button>
+        </div>
     </nav>
   
     <!-- Page Content  -->
     <div id="content" style="height: 100vh;overflow: auto;" [ngClass]="{'active': toggle}">
   
-        <nav class="navbar navbar-expand-lg navbar-dark" id="navbar" [ngClass]="{'full-width': toggle}">
+        <nav class="navbar navbar-expand-lg navbar-dark" color="primary" id="navbar" [ngClass]="{'full-width': toggle}">
             <div class="container-fluid">
   
                 <button type="button" id="sidebarCollapse" class="btn text-white" (click)="toggle = !toggle">
@@ -74,9 +69,6 @@
                 <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-expanded="false" aria-controls="navbarSupportedContent">
                     <i class="fas fa-align-justify"></i>
                   </button>
-                <!-- <button class="btn btn-dark d-inline-block d-lg-none ml-auto derecha" type="button" data-bs-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-align-justify"></i>
-                </button> -->
   
                 <span class="spacer"></span>
   
@@ -104,19 +96,16 @@
                         {{userName}}
                       </span>
                     </button>
-                    <mat-menu #userMenu="matMenu" xPosition="before" yPosition="above" [overlapTrigger]="false">
+                    <mat-menu class="p-4 bg-white" #userMenu="matMenu" xPosition="before" yPosition="above" [overlapTrigger]="false">
                 
-                      <a mat-menu-item [routerLink]="['/account/profile']">
-                        <mat-icon>person</mat-icon>
-                        <span>Account</span>
-                      </a>
-                
-                      <a mat-menu-item [routerLink]="['/auth/login']">
-                        <mat-icon>exit_to_app</mat-icon>
-                        <span>Log out</span>
-                      </a>
-                
-                    </mat-menu>
+                        <div class="perfil-foto" style="background-image: url('https://upds.blob.core.windows.net/fotoperfil/80384.png');" alt="Foto"></div>
+                        <p class="perfil-nombre mt-2">Joaquin Gonzalez Villaescusa</p>
+                        <p class="perfil-detalle">joaquin.gonzalez@upds.edu.bo</p>
+                        <p class="text-center">Cargo: <span class="perfil-detalle">Desarrollador</span></p>
+                        <p class="text-center">Sede: <span class="perfil-detalle">Rectorado Nacional</span></p>
+                        <button (click)="logOut()" mat-flat-button color="warn" class="full-width"><mat-icon>exit_to_app</mat-icon> Cerrar Sesion</button>
+                  
+                      </mat-menu>
                 </div>
             </div>
         </nav>

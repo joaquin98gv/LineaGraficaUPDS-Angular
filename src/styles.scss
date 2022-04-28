@@ -1,0 +1,85 @@
+@use '@angular/material' as mat;
+@use 'assets/styles/my-theme.scss' as theme;
+
+@include mat.core();
+
+
+
+// Define a light theme
+$light-primary: mat.define-palette(theme.$primary-palette);
+$light-accent: mat.define-palette(theme.$accent-palette);
+$light-warn: mat.define-palette(theme.$warn-palette);
+$light-theme: mat.define-light-theme((
+ color: (
+   primary: $light-primary,
+   accent: $light-accent,
+   warn: $light-warn
+ )
+));
+
+// Define a dark theme
+$dark-primary: mat.define-palette(mat.$pink-palette);
+$dark-accent: mat.define-palette(mat.$blue-gray-palette);
+$dark-theme: mat.define-dark-theme((
+ color: (
+   primary: $dark-primary,
+   accent: $dark-accent,
+ )
+));
+
+// Apply the dark theme by default
+@include mat.core-theme($light-theme);
+@include mat.button-theme($light-theme);
+
+// Apply the light theme only when the `.my-light-theme` CSS class is applied
+// to an ancestor element of the components (such as `body`).
+.dark-theme {
+ @include mat.core-color($dark-theme);
+ @include mat.button-color($dark-theme);
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+// html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa !important;
+}
+
+.full-width {
+    width: 100% !important;
+}
+
+.ml-auto {
+    margin-left: auto !important;
+}
+
+
+
+
+
+*::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0px 0px 2px #c6c6c6;
+  background: #e1e1e1;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+*::-webkit-scrollbar-thumb:hover  {
+  background: #b3b3b3;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+*::-webkit-scrollbar-thumb:active  {
+  background-color: #999999;
+}

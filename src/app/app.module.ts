@@ -11,8 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './login/register.component';
-import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+import { NotpagefoundComponent } from './notpagefound/notpagefound.component';
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -27,8 +26,7 @@ import {MatCardModule} from '@angular/material/card';
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent,
-    NopagefoundComponent
+    NotpagefoundComponent
   ],
   imports: [
     BrowserModule,
