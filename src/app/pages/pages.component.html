@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper mat-app-background" [ngClass]="{'dark-theme': modoOscuro}">
     <!-- Sidebar  -->
     <nav id="sidebar" [ngClass]="{'active': toggle}">
         <div class="sidebar-header">
@@ -87,6 +87,11 @@
                       </a>
                 
                     </mat-menu>
+
+                    <button mat-icon-button style="color: rgba(255,255,255,.55);" (click)="cambiarModo()">
+                        <mat-icon *ngIf="!modoOscuro">dark_mode</mat-icon>
+                        <mat-icon *ngIf="modoOscuro">light_mode</mat-icon>
+                    </button>
                 
                 
                 

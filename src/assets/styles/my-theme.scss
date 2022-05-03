@@ -72,3 +72,28 @@ $warn-palette: (
    900: rgba(black, 0.87),
  )
 );
+
+$dark-primary-palette: (
+ 50: rgb(0, 70, 134),
+ 100: rgb(0, 70, 134),
+ 200: rgb(0, 70, 134),
+ 300: rgb(0, 70, 134),
+ 400: rgb(0, 70, 134),
+ 500: #37536c,
+ 600: rgb(0, 70, 134),
+ 700: rgb(0, 70, 134),
+ 800: rgb(0, 70, 134),
+ 900: rgb(0, 70, 134),
+ contrast: (
+   50: rgba(black, 0.87),
+   100: rgba(black, 0.87),
+   200: rgba(black, 0.87),
+   300: rgba(black, 0.87),
+   400: rgba(black, 0.87),
+   500: #fff,
+   600: rgba(black, 0.87),
+   700: rgba(black, 0.87),
+   800: rgba(black, 0.87),
+   900: rgba(black, 0.87),
+ )
+);

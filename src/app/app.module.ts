@@ -12,6 +12,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { LoginComponent } from './login/login.component';
 import { NotpagefoundComponent } from './notpagefound/notpagefound.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -26,7 +27,8 @@ import {MatCardModule} from '@angular/material/card';
   declarations: [
     AppComponent,
     LoginComponent,
-    NotpagefoundComponent
+    NotpagefoundComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,

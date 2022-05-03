@@ -10,6 +10,13 @@
     <hr>
 
     <div>
+      <h2>Dialog</h2>
+      <button mat-raised-button (click)="openDialog()">Open dialog</button>
+    </div>
+
+    <hr>
+
+    <div>
         <h2>Botones de ejemplo</h2>
         <section>
             <div class="example-label">Basic</div>
@@ -159,8 +166,8 @@
               </p>
             </mat-card-content>
             <mat-card-actions>
-              <button mat-button>LIKE</button>
-              <button mat-button>SHARE</button>
+              <button mat-raised-button color="primary">LIKE</button>
+              <button mat-raised-button>SHARE</button>
             </mat-card-actions>
           </mat-card>
           
@@ -170,17 +177,79 @@
 
     <div>
         <h2>SnackBar</h2>
-        <mat-form-field appearance="fill" class="m-2">
+        <mat-form-field appearance="outline" class="m-2">
             <mat-label>Message</mat-label>
             <input matInput value="Disco party!" #message>
           </mat-form-field>
           
-          <mat-form-field appearance="fill" class="m-2">
+          <mat-form-field appearance="outline" class="m-2">
             <mat-label>Action</mat-label>
             <input matInput value="Dance" #action>
           </mat-form-field>
           
           <button mat-stroked-button (click)="openSnackBar(message.value, action.value)">Show snack-bar</button>
+    </div>
 
+    <div>
+      <h2>SnackBar</h2>
+      <mat-form-field appearance="fill" class="m-2">
+          <mat-label>Message</mat-label>
+          <input matInput value="Disco party!" #message>
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill" class="m-2">
+          <mat-label>Action</mat-label>
+          <input matInput value="Dance" #action>
+        </mat-form-field>
+        
+        <button mat-stroked-button (click)="openSnackBar(message.value, action.value)">Show snack-bar</button>
+    </div>
+    <div>
+      <h2>SnackBar</h2>
+      <mat-form-field appearance="legacy" class="m-2">
+          <mat-label>Message</mat-label>
+          <input matInput value="Disco party!" #message>
+        </mat-form-field>
+        
+        <mat-form-field appearance="legacy" class="m-2">
+          <mat-label>Action</mat-label>
+          <input matInput value="Dance" #action>
+        </mat-form-field>
+        
+        <button mat-stroked-button (click)="openSnackBar(message.value, action.value)">Show snack-bar</button>
+    </div>
+
+    <div class="example-container">
+      <form [formGroup]="options">
+        <mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox>
+        <div>
+          <label>Float label: </label>
+          <mat-radio-group [formControl]="floatLabelControl">
+            <mat-radio-button value="auto">Auto</mat-radio-button>
+            <mat-radio-button value="always">Always</mat-radio-button>
+          </mat-radio-group>
+        </div>
+    
+        <mat-form-field appearance="fill"
+            [hideRequiredMarker]="hideRequiredControl.value"
+            [floatLabel]="floatLabelControl.value">
+          <input matInput placeholder="Simple placeholder" required>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+          <mat-label>Both a label and a placeholder</mat-label>
+          <input matInput placeholder="Simple placeholder">
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill"
+            [hideRequiredMarker]="hideRequiredControl.value"
+            [floatLabel]="floatLabelControl.value">
+          <mat-select required>
+            <mat-option>-- None --</mat-option>
+            <mat-option value="option">Option</mat-option>
+          </mat-select>
+          <mat-label><mat-icon>favorite</mat-icon> <b> Fancy</b> <i> label</i></mat-label>
+        </mat-form-field>
+      </form>
     </div>
 </div>

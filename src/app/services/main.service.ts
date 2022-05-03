@@ -8,7 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 export class MainService {
 
   constructor(private http: HttpClient, private toastr: ToastrService) {
-    this.toastr.success('Hello world!', 'Toastr fun!');
+    // this.toastr.success('Hello world!', 'Toastr fun!');
   }
 
   public getCabecera() {
