@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MainService {
 
+  cad: Subject<string> = new Subject<string>();
   constructor(private http: HttpClient, private toastr: ToastrService) {
     // this.toastr.success('Hello world!', 'Toastr fun!');
   }

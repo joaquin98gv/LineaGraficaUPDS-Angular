@@ -1,6 +1,6 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MainService } from '../services/main.service';
 
 @Component({
@@ -14,7 +14,13 @@ export class PagesComponent implements OnInit {
   userName = "Joaquin.Gonzalez";
   modoOscuro = false;
   darkClassName = 'dark-theme';
-  constructor(private mainS: MainService, private router: Router, private overlay: OverlayContainer) {
+  quiereBuscar = false;
+  search = '';
+  bread = '';
+  constructor(private mainS: MainService, 
+    private router: Router, 
+    private overlay: OverlayContainer,
+    private activatedR: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -42,6 +48,11 @@ export class PagesComponent implements OnInit {
   logOut(){
     localStorage.removeItem('Authorization');
     this.router.navigateByUrl('/login');
+  }
+
+  mouseEnter(){
+    console.log('entro');
+    
   }
 
 }

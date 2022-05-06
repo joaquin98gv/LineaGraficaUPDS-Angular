@@ -22,12 +22,14 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     PagesComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,
