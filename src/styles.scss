@@ -42,7 +42,7 @@ body {
   }
   
   .navbar {
-    background: #37536c !important;
+    background: #6286b9 !important;
   }
 
   a,
@@ -58,10 +58,10 @@ body {
   
   #sidebar ul li.active>a,
   a[aria-expanded="true"] {
-    background: rgb(55, 83, 108) !important;
+    background: #6286b9 !important;
   }
   #sidebar ul li a:hover {
-    background: rgba(55, 83, 108, .4) !important;
+    background: rgb(96 125 139 / 35%) !important;
   }
 
   .form-control {
