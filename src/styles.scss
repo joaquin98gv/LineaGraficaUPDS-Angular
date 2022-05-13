@@ -69,6 +69,15 @@ body {
     color: #f4f4f4;
   }
   
+  *::-webkit-scrollbar-thumb {
+    background: #9ab5db !important;
+  }
+  *::-webkit-scrollbar-thumb:hover  {
+    background: #7699c9 !important;
+  }
+  *::-webkit-scrollbar-thumb:active  {
+    background-color: #6286b9 !important;
+  }
   
 }
 

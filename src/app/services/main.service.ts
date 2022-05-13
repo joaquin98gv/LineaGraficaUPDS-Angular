@@ -7,7 +7,14 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class MainService {
-
+  // toggle menu
+  toggle: Subject<boolean> = new Subject<boolean>();
+  // modo oscuro
+  modoOscuro: Subject<boolean> = new Subject<boolean>();
+  darkClassName = 'dark-theme';
+  //Permisos
+  public interfaces = [];
+  
   cad: Subject<string> = new Subject<string>();
   constructor(private http: HttpClient, private toastr: ToastrService) {
     // this.toastr.success('Hello world!', 'Toastr fun!');

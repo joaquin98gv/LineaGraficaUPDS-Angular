@@ -9,6 +9,11 @@ import { PagesComponent } from './pages.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 
+import { SearchComponent } from './search/search.component';
+import { NavBarComponent } from '../components/shared/nav-bar/nav-bar.component';
+import { SideBarComponent } from '../components/shared/side-bar/side-bar.component';
+import { CardProfileComponent } from '../components/shared/card-profile/card-profile.component';
+
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
@@ -22,14 +27,16 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
-import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     PagesComponent,
     HomeComponent,
     ContactComponent,
-    SearchComponent
+    SearchComponent,
+    NavBarComponent,
+    SideBarComponent,
+    CardProfileComponent
   ],
   imports: [
     CommonModule,

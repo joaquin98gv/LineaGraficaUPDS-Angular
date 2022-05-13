@@ -17,42 +17,39 @@ export class PagesComponent implements OnInit {
   quiereBuscar = false;
   search = '';
   bread = '';
+  appReady = false;
+  menus: any[] = [];
   constructor(private mainS: MainService, 
-    private router: Router, 
-    private overlay: OverlayContainer,
-    private activatedR: ActivatedRoute) {
+    private overlay: OverlayContainer) {
+      mainS.modoOscuro.subscribe((resp: any) => {
+        this.modoOscuro = resp;
+        localStorage.setItem('theme', this.modoOscuro ? 'dark' : 'light');
+        if (resp) {
+          this.overlay.getContainerElement().classList.add(this.mainS.darkClassName);
+        } else {
+          this.overlay.getContainerElement().classList.remove(this.mainS.darkClassName);
+        }
+      });
+      mainS.toggle.subscribe((obs: any) => {this.toggle = obs});
+      this.obtenerInterfaces().then((response: any) => {
+        this.appReady = true;
+      });
   }
 
   ngOnInit(): void {
     if (localStorage.getItem('theme') == 'dark') {
       this.modoOscuro = true;
-      console.log(this.overlay.getContainerElement().classList);
-      
-      this.overlay.getContainerElement().classList.add(this.darkClassName);
-    } else {
-      this.overlay.getContainerElement().classList.add(this.darkClassName);
-    }
-  }
-  cambiarModo(){
-    console.log(this.overlay.getContainerElement());
-    
-    this.modoOscuro = !this.modoOscuro;
-    localStorage.setItem('theme', this.modoOscuro ? 'dark' : 'light');
-    if (this.modoOscuro) {
-      this.overlay.getContainerElement().classList.add(this.darkClassName);
-    } else {
-      this.overlay.getContainerElement().classList.remove(this.darkClassName);
+      this.overlay.getContainerElement().classList.add(this.mainS.darkClassName);
     }
   }
 
-  logOut(){
-    localStorage.removeItem('Authorization');
-    this.router.navigateByUrl('/login');
+  async tienePermisos() {
+    // let response = await this.mainS.getModulos();
   }
-
-  mouseEnter(){
-    console.log('entro');
-    
+  async obtenerInterfaces() {
+    // let response = await this.mainS.getInterfaces();
+    // this.mainS.interfaces = response;
+    // this.menus = response;
   }
 
 }

@@ -1,0 +1,33 @@
+.navbar {
+    padding: 15px 10px;
+    background: rgb(0, 70, 134);
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: calc(100% - 250px);
+    z-index: 999;
+    transition: all 0.3s;
+  }
+  
+  .navbar-spacer {
+      flex: 1 1 auto;
+    }
+
+.filter {
+  display: contents;
+  * {
+    transition: all 0.3s;
+  }
+
+  button {
+    // display: none;
+  }
+}
+
+.filter :hover{
+  button {
+    display: block !important;
+  }
+}

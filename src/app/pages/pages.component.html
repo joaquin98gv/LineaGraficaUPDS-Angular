@@ -1,129 +1,18 @@
-<div class="wrapper mat-app-background" [ngClass]="{'dark-theme': modoOscuro}">
-    <!-- Sidebar  -->
-    <nav id="sidebar" [ngClass]="{'active': toggle}">
-        <div class="sidebar-header">
-            <h3 class="text-center">UPDS</h3>
-        </div>
-  
-        <ul class="list-unstyled components">
-            <p style="color: #b9b9b9;">Linea Grafica</p>
-            <!-- <i>{{bread}}</i> -->
-            <li routerLinkActive="active">
-                <a href="#" routerLink="/home">
-                    <i class="fa-solid fa-table-columns"></i>
-                    Dashboard
-                </a>
-            </li>
-            <li routerLinkActive="active">
-                <a href="#">
-                    <i class="fa-regular fa-address-card"></i>
-                    About
-                </a>
-            </li>
-            <li routerLinkActive="active">
-                <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false">
-                    <i class="fa-regular fa-address-card"></i>
-                    Pages
-                    <i class="fa-solid fa-caret-down float-end"></i>
-                </a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Page 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 3</a>
-                    </li>
-                </ul>
-            </li>
-            <li routerLinkActive="active">
-                <a href="#">
-                    <i class="fa-regular fa-address-card"></i>
-                    Portfolio
-                </a>
-            </li>
-            <li routerLinkActive="active">
-                <a href="#" [routerLink]="'/contact'">
-                    <i class="fa-regular fa-id-card"></i>
-                    Contact
-                </a>
-            </li>
-        </ul>
-        <div class="m-2">
-            <button class="full-width py-2" mat-raised-button color="warn">
-                Documentacion
-            </button>
-        </div>
-    </nav>
-  
-    <!-- Page Content  -->
-    <div id="content" style="height: 100vh;overflow: auto;" [ngClass]="{'active': toggle}">
-  
-        <nav class="navbar navbar-expand-lg navbar-dark" color="primary" id="navbar" [ngClass]="{'full-width': toggle}">
-            <div class="container-fluid">
-  
-                <button type="button" id="sidebarCollapse" class="btn text-white" (click)="toggle = !toggle">
-                    <i class="fas fa-align-left"></i> Menu
-                </button>
-                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-expanded="false" aria-controls="navbarSupportedContent">
-                    <i class="fas fa-align-justify"></i>
-                  </button>
-  
-                <span class="spacer"></span>
-  
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <div class="filter">
-                        <div class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Buscar" [(ngModel)]="search">
-                        </div>
-                        <button mat-flat-button class="animate__animated animate__fadeIn" color="accent" title="Busqueda Avanzada" *ngIf="search != ''" [routerLink]="'/busqueda/'+search">Buscar</button>
-                      </div>
-                    <span class="navbar-spacer"></span>
-                    <button mat-icon-button [matMenuTriggerFor]="notificationMenu" style="color: rgba(255,255,255,.55);;">
-                      <mat-icon matBadge="2" matBadgeColor="accent">notifications</mat-icon>
-                    </button>
-                    <mat-menu #notificationMenu="matMenu" xPosition="before" yPosition="above" [overlapTrigger]="false">
-                
-                      <a mat-menu-item>
-                        <span>You have new tasks</span>
-                      </a>
-                      <a mat-menu-item>
-                        <span>You have a new message</span>
-                      </a>
-                
-                    </mat-menu>
-
-                    <button mat-icon-button style="color: rgba(255,255,255,.55);" (click)="cambiarModo()">
-                        <mat-icon *ngIf="!modoOscuro">dark_mode</mat-icon>
-                        <mat-icon *ngIf="modoOscuro">light_mode</mat-icon>
-                    </button>
-                
-                
-                
-                    <button mat-button [matMenuTriggerFor]="userMenu" style="color: rgba(255,255,255,.55);;">
-                      <mat-icon>person</mat-icon>
-                      <span fxShow fxHide.xs>
-                        {{userName}}
-                      </span>
-                    </button>
-                    <mat-menu class="p-4" #userMenu="matMenu" xPosition="before" yPosition="above" [overlapTrigger]="false">
-                
-                        <div class="perfil-foto" style="background-image: url('https://upds.blob.core.windows.net/fotoperfil/80384.png');" alt="Foto"></div>
-                        <p class="perfil-nombre mt-2">Joaquin Gonzalez Villaescusa</p>
-                        <p class="perfil-detalle">joaquin.gonzalez@upds.edu.bo</p>
-                        <p class="text-center">Cargo: <span class="perfil-detalle">Desarrollador</span></p>
-                        <p class="text-center">Sede: <span class="perfil-detalle">Rectorado Nacional</span></p>
-                        <button (click)="logOut()" mat-flat-button color="warn" class="full-width"><mat-icon>exit_to_app</mat-icon> Cerrar Sesion</button>
-                  
-                      </mat-menu>
-                </div>
-            </div>
+<div *ngIf="appReady">
+    <div class="wrapper mat-app-background" [ngClass]="{'dark-theme': modoOscuro}">
+        <!-- Sidebar  -->
+        <nav id="sidebar" [ngClass]="{'active': toggle}">
+            <app-side-bar [menus]="menus"></app-side-bar>
         </nav>
-  
-        <div class="content p-4" id="contenido" [ngClass]="{'full-width': toggle}">
-            <router-outlet></router-outlet>
+      
+        <!-- Page Content  -->
+        <div id="content" style="height: 100vh;overflow: auto;" [ngClass]="{'active': toggle}">
+      
+            <app-nav-bar></app-nav-bar>
+      
+            <div class="content p-4" id="contenido" [ngClass]="{'full-width': toggle}">
+                <router-outlet></router-outlet>
+            </div>
         </div>
-    </div>
-  </div>
+      </div>
+</div>

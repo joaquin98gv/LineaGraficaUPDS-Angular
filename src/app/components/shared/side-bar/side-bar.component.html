@@ -1,0 +1,40 @@
+<div id="sidebar">
+
+    <div class="sidebar-header">
+        <h3 class="text-center">UPDS</h3>
+    </div>
+    
+    <ul class="list-unstyled components">
+        <p style="color: #b9b9b9;">Modulo de Seguridad</p>
+        <!-- <i>{{bread}}</i> -->
+        <li routerLinkActive="active">
+            <a href="#" routerLink="/home">
+                <i class="fa-solid fa-table-columns"></i>
+                Dashboard
+            </a>
+        </li>
+        <li routerLinkActive="active" *ngFor="let menu of menus">
+            <a href="#" [routerLink]="menu.ubicacion">
+                <i class="fa-regular {{menu.icono}}"></i>
+                {{menu.titulo}}
+            </a>
+        </li>
+        <!-- <li routerLinkActive="active">
+            <a href="#" routerLink="/cargos">
+                <i class="fa-regular fa-address-card"></i>
+                Cargos
+            </a>
+        </li>
+        <li routerLinkActive="active">
+            <a href="#" routerLink="/funcionarios">
+                <i class="fa-regular fa-address-card"></i>
+                Funcionarios
+            </a>
+        </li> -->
+    </ul>
+    <div class="m-2">
+        <button class="full-width py-2" mat-raised-button color="warn">
+            Documentacion
+        </button>
+    </div>
+</div>
