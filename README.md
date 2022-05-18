@@ -1,4 +1,4 @@
-# Linea Grafica UPDS - HTML
+# Linea Grafica UPDS - Angular
 Linea grafica web administrativa UPDS como plantilla Angular 13.2.5
 
 ### Librerias
