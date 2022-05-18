@@ -10,23 +10,22 @@ import { MainService } from 'src/app/services/main.service';
 export class CardProfileComponent implements OnInit {
 
   funcionario: any = {};
-  userName = "Joaquin.Gonzalez";
   constructor(private mainS: MainService,  
     private router: Router) {
-      // this.getPerfil().then((resp: any) => {
-      //   if(resp == "error") router.navigateByUrl('/login');
-      // });
+      this.getPerfil().then((resp: any) => {
+        if(resp == "error") this.logOut();
+      });
     }
 
   ngOnInit(): void {
   }
 
-  // async getPerfil() {
-  //   let response: any = await this.mainS.getPerfilFuncionario();
+  async getPerfil() {
+    let response: any = await this.mainS.getPerfil();
     
-  //   this.funcionario = response.value;
-  //   return response;
-  // }
+    this.funcionario = response;
+    return response;
+  }
 
   logOut(){
     localStorage.removeItem('Authorization');
