@@ -10,7 +10,7 @@ import { MainService } from '../services/main.service';
 })
 export class PagesComponent implements OnInit {
   @HostBinding('class') className = '';
-  toggle = false;
+  toggle = true;
   userName = "Joaquin.Gonzalez";
   modoOscuro = false;
   darkClassName = 'dark-theme';
@@ -30,7 +30,6 @@ export class PagesComponent implements OnInit {
           this.overlay.getContainerElement().classList.remove(this.mainS.darkClassName);
         }
       });
-      mainS.toggle.subscribe((obs: any) => {this.toggle = obs});
       this.obtenerInterfaces().then((response: any) => {
         this.appReady = true;
       });

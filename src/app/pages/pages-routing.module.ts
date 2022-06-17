@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { PagesComponent } from './pages.component';
-import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
@@ -12,7 +11,6 @@ const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent, data: { titulo: 'Inicio' } },
       { path: 'contact', component: ContactComponent, data: { titulo: 'Contacto' } },
-      { path: 'busqueda/:search', component: SearchComponent, data: { titulo: 'Busqueda' } },
       { path: '', redirectTo: 'home', pathMatch: 'full' }
       // { path: '**', redirectTo: 'home', pathMatch: 'full' }
     ]

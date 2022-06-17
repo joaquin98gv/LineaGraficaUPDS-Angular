@@ -6,7 +6,8 @@ import { NotpagefoundComponent } from './notpagefound/notpagefound.component';
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule),
-  canActivate: [LoginGuard] },
+  // canActivate: [LoginGuard] 
+  },
   { path: 'login', component: LoginComponent },
   { path: '**', component: NotpagefoundComponent },
 ];

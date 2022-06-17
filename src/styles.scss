@@ -40,10 +40,6 @@ body {
   p, h1, h2, h3, h4, h5, h6 {
     color: #fff;
   }
-  
-  .navbar {
-    background: #6286b9 !important;
-  }
 
   a,
   a:hover,
@@ -115,6 +111,9 @@ body {
 *::-webkit-scrollbar-thumb:active  {
   background-color: #999999;
 }
+
+
+
 
 .fade-in {
   animation: alternate-fade-in 0.5s ease-in-out;

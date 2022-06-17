@@ -1,40 +1,45 @@
 <div id="sidebar">
+    <button mat-mini-fab class="btn-close" (click)="toggleOff()">
+        <mat-icon>close</mat-icon>
+    </button>
 
-    <div class="sidebar-header">
-        <h3 class="text-center">UPDS</h3>
+    <div class="mt-4">
+        <div class="perfil-foto" style="background-image: url('https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=612x612&w=0&h=lGpj2vWAI3WUT1JeJWm1PRoHT3V15_1pdcTn2szdwQ0=');" alt="Foto"></div>
+        <p class="perfil-nombre mt-2">Joaquin Gonzalez Villaescusa</p>
+        <p class="perfil-detalle">joaquin.gonzalez@upds.edu.bo</p>
+        <p class="text-center"><span class="perfil-detalle">Desarrollador</span></p>
     </div>
     
     <ul class="list-unstyled components">
-        <p style="color: #b9b9b9;">Modulo de Seguridad</p>
-        <!-- <i>{{bread}}</i> -->
         <li routerLinkActive="active">
             <a href="#" routerLink="/home">
                 <i class="fa-solid fa-table-columns"></i>
                 Dashboard
             </a>
         </li>
+        <li routerLinkActive="active">
+            <a href="#" routerLink="/contact">
+                <i class="fa-solid fa-table-columns"></i>
+                Contact
+            </a>
+        </li>
+        
         <li routerLinkActive="active" *ngFor="let menu of menus">
             <a href="#" [routerLink]="menu.ubicacion">
                 <i class="fa-regular {{menu.icono}}"></i>
                 {{menu.titulo}}
             </a>
         </li>
-        <!-- <li routerLinkActive="active">
-            <a href="#" routerLink="/cargos">
-                <i class="fa-regular fa-address-card"></i>
-                Cargos
-            </a>
-        </li>
-        <li routerLinkActive="active">
-            <a href="#" routerLink="/funcionarios">
-                <i class="fa-regular fa-address-card"></i>
-                Funcionarios
-            </a>
-        </li> -->
     </ul>
-    <div class="m-2">
-        <button class="full-width py-2" mat-raised-button color="warn">
-            Documentacion
+
+    <section class="section-botton text-center">
+        <mat-button-toggle-group [(ngModel)]="tema" (ngModelChange)="cambiarModo()" class="my-2">
+            <mat-button-toggle value="light"><i class="fa-solid fa-lightbulb"></i></mat-button-toggle>
+            <mat-button-toggle value="dark"><i class="fa-solid fa-moon"></i></mat-button-toggle>
+          </mat-button-toggle-group>
+        <button mat-flat-button color="warn" class="btn-logout">
+            Cerrar sesion
+            <mat-icon>logout</mat-icon>
         </button>
-    </div>
+    </section>
 </div>

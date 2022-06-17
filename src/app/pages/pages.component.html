@@ -2,15 +2,20 @@
     <div class="wrapper mat-app-background" [ngClass]="{'dark-theme': modoOscuro}">
         <!-- Sidebar  -->
         <nav id="sidebar" [ngClass]="{'active': toggle}">
-            <app-side-bar [menus]="menus"></app-side-bar>
+            <app-side-bar [menus]="menus" (aplicarCambios)="toggle = true"></app-side-bar>
         </nav>
       
         <!-- Page Content  -->
-        <div id="content" style="height: 100vh;overflow: auto;" [ngClass]="{'active': toggle}">
+        <div style="height: 100vh;overflow: auto;" [ngClass]="{'active': toggle}">
+            <!-- <button mat-mini-fab (click)="toggle = false" class="btn-toggle" color="accent" style="z-index: 1;">
+                <mat-icon>menu</mat-icon>
+            </button> -->
+            <button mat-fab color="primary" class="btn-toggle" (click)="toggle = false" style="z-index: 1;">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <!-- <app-nav-bar></app-nav-bar> -->
       
-            <app-nav-bar></app-nav-bar>
-      
-            <div class="content p-4" id="contenido" [ngClass]="{'full-width': toggle}">
+            <div class="container" [ngClass]="{'full-width': toggle}" (click)="!toggle ? toggle = true:null">
                 <router-outlet></router-outlet>
             </div>
         </div>
