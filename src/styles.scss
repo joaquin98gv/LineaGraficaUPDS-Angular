@@ -33,12 +33,17 @@ $dark-theme: mat.define-dark-theme((
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
 }
 
 .dark-theme {
 
   p, h1, h2, h3, h4, h5, h6 {
     color: #fff;
+  }
+  
+  label span{
+    background: #fff !important;
   }
 
   a,
@@ -47,9 +52,13 @@ body {
       color: #fff !important;
   }
 
-  #sidebar {
-    background: #333 !important;
+  #sidebar, .section-botton {
+    background: #1e1e1e !important;
     color: #fff !important;
+  }
+
+  .isologo {
+    filter: invert(1);
   }
   
   #sidebar ul li.active>a,
@@ -65,16 +74,6 @@ body {
     color: #f4f4f4;
   }
   
-  *::-webkit-scrollbar-thumb {
-    background: #9ab5db !important;
-  }
-  *::-webkit-scrollbar-thumb:hover  {
-    background: #7699c9 !important;
-  }
-  *::-webkit-scrollbar-thumb:active  {
-    background-color: #6286b9 !important;
-  }
-  
 }
 
 .full-width {
@@ -85,7 +84,11 @@ body {
     margin-left: auto !important;
 }
 
-
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
 
 
@@ -96,7 +99,7 @@ body {
 }
 
 *::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
   height: 8px;
 }
 
@@ -110,6 +113,11 @@ body {
 }
 *::-webkit-scrollbar-thumb:active  {
   background-color: #999999;
+}
+
+* {
+  outline: none !important;
+  scrollbar-width: thin;
 }
 
 

@@ -98,3 +98,24 @@ $dark-primary-palette: (
    900: rgba(white, 0.87),
  )
 );
+
+
+// Fonts
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons+Round';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+// $fontConfig: (
+//   display-4: mat.define-typography-level(60px, 60px, 400, 'Roboto', -0.0221em),
+//   display-3: mat.define-typography-level(50px, 50px, 400, 'Roboto', -0.0089em),
+//   display-2: mat.define-typography-level(40px, 40px, 400, 'Roboto', 0.0000em),
+//   display-1: mat.define-typography-level(30px, 36px, 400, 'Roboto', 0.0074em),
+//   headline: mat.define-typography-level(16px, 24px, 400, 'Roboto', 0.0000em),
+//   title: mat.define-typography-level(20px, 28px, 500, 'Roboto', 0.0075em),
+//   subheading-2: mat.define-typography-level(14px, 20px, 400, 'Roboto', 0.0094em),
+//   subheading-1: mat.define-typography-level(14px, 20px, 500, 'Roboto', 0.0067em),
+//   body-2: mat.define-typography-level(12px, 16px, 500, 'Roboto', 0.0179em),
+//   body-1: mat.define-typography-level(12px, 16px, 400, 'Roboto', 0.0179em),
+//   button: mat.define-typography-level(12px, 16px, 500, 'Roboto', 0.0893em),
+//   caption: mat.define-typography-level(12px, 16px, 400, 'Roboto', 0.0333em),
+//   input: mat.define-typography-level(inherit, 1.125, 400, 'Roboto', 1.5px)
+// );
