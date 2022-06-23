@@ -1,28 +1,19 @@
 <div *ngIf="appReady">
     <div class="wrapper mat-app-background" [ngClass]="{'dark-theme': modoOscuro}">
-        <!-- Sidebar  -->
         <nav id="sidebar" [ngClass]="{'active': !toggle}">
             <app-side-bar [menus]="menus" (aplicarCambios)="toggle = true"></app-side-bar>
         </nav>
       
         <!-- Page Content  -->
         <div class="content mat-app-background" [ngClass]="{'active': toggle}">
-            <!-- <button mat-mini-fab (click)="toggle = false" class="btn-toggle" color="accent" style="z-index: 1;">
-                <mat-icon>menu</mat-icon>
-            </button> -->
-            <label for="check">
+            <label class="label" for="check">
                 <input type="checkbox" id="check" [(ngModel)]="toggle" /> 
                 <span></span>
                 <span></span>
                 <span></span>
               </label>
-            <!-- <button mat-raised-button color="primary" class="btn-toggle" (click)="toggle = !toggle">
-                <mat-icon *ngIf="toggle">menu</mat-icon>
-                <mat-icon *ngIf="!toggle">close</mat-icon>
-            </button> -->
-            <!-- <app-nav-bar></app-nav-bar> -->
       
-            <div class="container" [ngClass]="{'full-width': toggle}" (click)="toggle ? toggle = false:null">
+            <div class="container" (click)="toggle ? toggle = false:null">
                 <router-outlet></router-outlet>
             </div>
         </div>

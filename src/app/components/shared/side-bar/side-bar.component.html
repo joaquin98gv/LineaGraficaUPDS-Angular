@@ -1,13 +1,9 @@
 <div id="sidebar">
-    <!-- <button mat-mini-fab class="btn-close" (click)="toggleOff()">
-        <mat-icon>close</mat-icon>
-    </button> -->
-
     <div class="pt-3">
         <div class="perfil-foto" style="background-image: url('https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=612x612&w=0&h=lGpj2vWAI3WUT1JeJWm1PRoHT3V15_1pdcTn2szdwQ0=');" alt="Foto"></div>
         <p class="perfil-nombre mt-2 mb-0 lh-1">Joaquin Gonzalez Villaescusa</p>
-        <p class="perfil-detalle mt-1 mb-0">joaquin.gonzalez@upds.edu.bo</p>
-        <p class="text-center"><span class="perfil-detalle">Desarrollador</span></p>
+        <p class="perfil-detalle mt-1 mb-0 text-overflow">joaquin.gonzalez@upds.edu.bo</p>
+        <p class="text-center text-overflow"><span class="perfil-detalle">Desarrollador</span></p>
     </div>
     
     <ul class="list-unstyled components">
@@ -24,7 +20,7 @@
             </a>
         </li>
         <li routerLinkActive="active" *ngFor="let menu of menus">
-            <a href="#" [routerLink]="menu.ubicacion">
+            <a href="#" [routerLink]="menu.ubicacion" class="text-overflow">
                 <i class="fa-regular {{menu.icono}}"></i>
                 {{menu.titulo}}
             </a>
@@ -35,17 +31,17 @@
         <div class="full-width">
             <mat-button-toggle-group [(ngModel)]="tema" (ngModelChange)="cambiarModo()" class="my-2">
                 <mat-button-toggle value="light">
-                    <i class="bi bi-emoji-sunglasses"></i>
+                    <i class="bi bi-brightness-high"></i>
                 </mat-button-toggle>
                 <mat-button-toggle value="dark">
-                    <i class="bi bi-emoji-sunglasses-fill"></i>
+                    <i class="bi bi-moon-fill"></i>
                 </mat-button-toggle>
             </mat-button-toggle-group>
         </div>
         <mat-divider></mat-divider>
         <img src="https://portal.upds.edu.bo/index/images/isologo.png" class="isologo">
         <div class="detail-version">
-            <p class="mb-0">&copy; 2022 - V1.3 DT</p>
+            <p class="mb-0">&copy; 2022 - V1.0.3 DT</p>
             <p>Design Template</p>
         </div>
         <button mat-flat-button color="warn" class="btn-logout">
