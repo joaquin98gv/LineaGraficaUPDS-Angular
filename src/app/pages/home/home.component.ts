@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   options: FormGroup;
   hideRequiredControl = new FormControl(false);
   floatLabelControl = new FormControl('auto');
+  bannerUrl = "";
   constructor(private _snackBar: MatSnackBar, private dialog: MatDialog, fb: FormBuilder) {
     this.options = fb.group({
       hideRequired: this.hideRequiredControl,
@@ -34,6 +35,10 @@ export class HomeComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  uriCambiada(uri: string){
+    this.bannerUrl = uri;
   }
 
 }

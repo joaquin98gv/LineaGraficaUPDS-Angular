@@ -1,0 +1,16 @@
+<div class="container" appDnd (fileDropped)="onFileDropped($event)">
+	<div *ngIf="!isUpload else spinner">
+		<input type="file" #fileDropRef id="fileDropRef" [accept]="tipeAccept" 
+		(change)="fileBrowseHandler($event.target)" />
+	
+		<img [src]="uri"*ngIf="uri != ''" class="img">
+	
+		<h3>Arrastra y suelta su {{nameFile}} aquí</h3>
+		<h3>o</h3>
+		<button mat-raised-button color="warn" for="fileDropRef" class="full-width btn-browse">Búscalo en tus archivos</button>
+	</div>
+	<ng-template #spinner>
+		<p class="text-center"> {{ porcentajeProgreso }} %</p>
+		<mat-progress-bar style="height: 6px; border-radius: 5px;" mode="determinate" [value]="porcentajeProgreso"></mat-progress-bar>
+	</ng-template>
+</div>

@@ -25,6 +25,10 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
+import { DndComponent } from './../components/dnd/dnd.component';
+import { DndDirective } from './../components/dnd/dnd.directive';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     HomeComponent,
     ContactComponent,
     SideBarComponent,
+    DndComponent,
+    DndDirective
   ],
   imports: [
     CommonModule,
@@ -51,7 +57,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatSlideToggleModule,
     MatDialogModule,
     MatRadioModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatProgressBarModule
   ]
 })
 export class PagesModule { }
