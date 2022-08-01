@@ -30,10 +30,8 @@ export class UploadService {
       xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
-            console.log('Imagen subida');
             resolve(JSON.parse(xhr.response));
           } else {
-            console.log('Fallo la solictud');
             reject(JSON.parse(xhr.response));
           }
         }
@@ -44,7 +42,6 @@ export class UploadService {
         var percentComplete = Math.ceil((e.loaded / e.total) * 100);
         this.porcentajeSubida.next(percentComplete);
       };
-      // xhr.setRequestHeader('Authorization', 'Bearer ' + (localStorage.getItem('Authorization') == null ? '' : localStorage.getItem('Authorization')));
       xhr.send(formData);
     });
   }

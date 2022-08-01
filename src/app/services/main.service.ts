@@ -32,20 +32,13 @@ export class MainService {
   // [GET]
   private async request(url: string){
     const headers = this.getCabecera();
-    let ans = await new Promise((resolve)=>{
+    let ans = await new Promise((resolve, reject)=>{
       this.http.get(url, {headers, observe:'response'}).subscribe({
         next: (response) => {
-          //Validar statuscode
           console.log(response);
-
-          //La respuesta del servidor
           resolve(response.body);
         },
-          //Si no hay respuesta (el servidor no responde o se perdio la conexion a internet)
-        error: () => {
-          // rejects(err);
-          resolve("error")
-        }
+        error: (err) => reject(err.message)
       })
     });    
     return ans;
@@ -54,20 +47,13 @@ export class MainService {
   // [POST]
   private async requestPost(url: string, obj: any = null){
     const headers = this.getCabecera();
-    let ans = await new Promise((resolve)=>{
+    let ans = await new Promise((resolve, reject)=>{
       this.http.post(url, obj, {headers, observe:'response'}).subscribe({
         next: (response) => {
-          //Validar statuscode
           console.log(response);
-
-          //La respuesta del servidor
           resolve(response.body);
         },
-          //Si no hay respuesta (el servidor no responde o se perdio la conexion a internet)
-        error: () => {
-          // rejects(err);
-          resolve("error")
-        }
+        error: (err) =>  reject(err.message)
       })
     });    
     return ans;
